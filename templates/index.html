@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>LP API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="home ownership" placeholder="Home Ownershipe" required="required" />
+        <input type="text" name="Purpose" placeholder="Purpose" required="required" />
+        <input type="text" name="Long Term" placeholder="Test Score" required="required" />
+        <input type="text" name="Short Term" placeholder="Short Term" required="required" />
+        <input type="text" name="current loan amount" placeholder="current loan amount" required="required" />
+        <input type="text" name="credit score" placeholder="credit score" required="required" />
+        <input type="text" name="years in current job" placeholder="years in current job" required="required" />
+        <input type="text" name="annual income" placeholder="annual income" required="required" />
+        <input type="text" name="Monthly Dedt" placeholder="Monthly Dedt" required="required" />
+        <input type="text" name="years of credit history" placeholder="years of credit history" required="required" />
+	    <input type="text" name="number of open accounts" placeholder="number of open accounts" required="required" />
+        <input type="text" name="Current Credit Balance" placeholder="Current Credit Balance" required="required" />
+        <input type="text" name="Maximum Open Credit" placeholder="Maximum Open Credit" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ LPred }}
+
+ </div>
+
+
+</body>
+</html>
+
+  
+
+
+
+
+
+
+
